@@ -1,6 +1,6 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        // Iterate over each element
+        // Iterate over each elements
         for (int i = 0; i < nums.length; i++) {
             // Check pairs with elements after i
             for (int j = i + 1; j < nums.length; j++) {
