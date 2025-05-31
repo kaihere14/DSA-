@@ -10,7 +10,6 @@ class Solution {
             }
            start++;end--;
         }
-        
         return true;
     }
 }
