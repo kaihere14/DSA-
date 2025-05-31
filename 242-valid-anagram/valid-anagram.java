@@ -6,13 +6,11 @@ class Solution {
         char [] lr = t.toCharArray();
         Arrays.sort(lr);
 
-        boolean check = false;
+        boolean check = true;
 
         if(ar.length == lr.length){
         for (int i = 0 ; i<ar.length ; i++) {
-            if (ar[i]==lr[i]) {
-                check = true;
-            }else{
+            if(ar[i]!=lr[i]){
                 check = false;
                 break;
             }
