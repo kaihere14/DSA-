@@ -11,12 +11,11 @@ class Solution {
         if(ar.length == lr.length){
         for (int i = 0 ; i<ar.length ; i++) {
             if(ar[i]!=lr[i]){
-                check = false;
-                break;
+                return false;
             }
         }
         }else{
-            check = false;
+            return false;
         }
         return check;
      }
