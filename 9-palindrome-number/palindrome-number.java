@@ -1,18 +1,16 @@
 class Solution {
-    public boolean isPalindrome(int x) {
-        String ne = String.valueOf(x);
+    public boolean isPalindrome(int n) {
+        int temp =n;
+        int num = 0;
         boolean check = false;
-        int start = 0;
-        int end = ne.length()-1;
-        while(start<=end){
-            if(ne.charAt(start)==ne.charAt(end)){
-                check = true;
-            }else {
-                check = false;
-                return check;
-            }
-            start++;
-            end--;
-        }return check;
-}
+        while(n>0){
+            int l = n%10;
+            num = num*10+l;
+            n = n/10;
+        }
+       if(num==temp){
+           check =true;
+       }
+       return check;
+    }
 }
