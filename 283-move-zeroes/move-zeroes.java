@@ -6,9 +6,10 @@ class Solution {
                 arr[k]=arr[i];
                 k++;
             }
-            if(i>=k){
-                arr[i]=0;
-            }
+            
+        }
+        while(k< arr.length){
+            arr[k++]=0;
         }
     }
 }
