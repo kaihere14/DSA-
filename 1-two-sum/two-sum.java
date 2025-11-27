@@ -1,16 +1,18 @@
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        // Iterate over each elements
-        for (int i = 0; i < nums.length; i++) {
-            // Check pairs with elements after i
-            for (int j = i + 1; j < nums.length; j++) {
-                // If sum matches target, return indices
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
+    public int[] twoSum(int[] arr, int target) {
+        HashMap<Integer,Integer> preNums = new HashMap<>();
+        for(int i =0;i<arr.length;i++){
+            int req = target-arr[i];
+            if(preNums.containsValue(req)){
+                for (Map.Entry<Integer, Integer> entry : preNums.entrySet()) {
+                    if (entry.getValue().equals(req)) {
+                        return new int[]{entry.getKey(),i};
+                    }
                 }
             }
+                preNums.put(i,arr[i]);
+
         }
-        // If no pair found (problem guarantees one, so this won't happen)
-        return new int[0];
+        return new int[]{-1,-1};
     }
 }
