@@ -10,10 +10,7 @@ class Solution {
                 positive[pos_start] = arr[i];
                 pos_start++;
                 System.out.println("positive"+arr[i]);
-            }
-        }
-        for(int i =0;i<arr.length;i++){
-            if(arr[i]<0){
+            }else if (arr[i]<0){
                 negative[neg_start++] = arr[i];
                 System.out.println("negative : "+arr[i]);
             }
@@ -28,9 +25,7 @@ class Solution {
             }
         }
 
-        for(int i =0;i< arr.length;i++){
-            System.out.println(arr[i]);
-        }
+        
         return arr;
     }
 }
