@@ -1,73 +1,33 @@
 class Solution {
-    public static void mergeSort(int[] arr, int left, int right) {
-        if (left < right) {
-            int mid = left + (right - left) / 2;
-            mergeSort(arr, left, mid);
-            mergeSort(arr, mid + 1, right);
-            merge(arr, left, mid, right);
-        }
-    }
-
-
-    public static void merge(int[] arr, int left, int mid, int right) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
-        int[] L = new int[n1];
-        int[] R = new int[n2];
-
-        for (int i = 0; i < n1; i++)
-            L[i] = arr[left + i];
-        for (int j = 0; j < n2; j++)
-            R[j] = arr[mid + 1 + j];
-
-
-        int i = 0, j = 0, k = left;
-
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-            } else {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
-        }
-
-
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
-
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
-    }
+  
 
     public int longestConsecutive(int[] arr) {
-        int max = 0;
-        int count = 0;
-        int max_count = 0;
         if(arr.length==0){
             return 0;
         }
-        
-        mergeSort(arr,0,arr.length-1);
-       
-        for(int i =0;i<arr.length-1;i++){
-             if(i>0&&arr[i]==arr[i+1]){
-                continue;
-            }
-            if(arr[i]==arr[i+1]-1) {
-                count++;
-            }else{
-                count=0;
-            }
-            max_count = Math.max(max_count,count);
+        TreeSet<Integer> sortedNumbers = new TreeSet<>();
+        for(int i = 0;i<arr.length;i++){
+            sortedNumbers.add(arr[i]);
+        }
+        int count = 0;
+        int max_count = 0;
+        int prev=-1;
+        boolean set  = false;
+       for(int value : sortedNumbers){
+           if (!set){
+               prev = value;
+               set=true;
+               continue;
+           }
+           System.out.println("prev" + prev);
+           if((value-1)==prev){
+               count++;
+           }else{
+               count=0;
+           }
+           max_count= Math.max(max_count,count);
+           prev=value;
+          
         }
         return max_count+1;
     }
