@@ -19,7 +19,6 @@ class Solution {
                set=true;
                continue;
            }
-           System.out.println("prev" + prev);
            if((value-1)==prev){
                count++;
            }else{
@@ -27,7 +26,6 @@ class Solution {
            }
            max_count= Math.max(max_count,count);
            prev=value;
-          
         }
         return max_count+1;
     }
