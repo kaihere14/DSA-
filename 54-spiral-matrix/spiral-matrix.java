@@ -1,38 +1,39 @@
 class Solution {
-    public List<Integer> spiralOrder(int[][] matrix) {
-        List<Integer> result = new ArrayList<>();
-        int starRow = 0;
-        int startCol = 0;
-        int endrow =matrix.length-1;
-        int endCol = matrix[0].length-1;
-        while (starRow <=endrow && startCol <=endCol) {
-            //top
-            for (int i = startCol; i <= endCol; i++) {
-                result.add(matrix[starRow][i]);
-            }
-            //right
-            for (int j = starRow + 1; j <= endrow; j++) {
-                result.add(matrix[j][endCol]);
-            }
-            //bottom
+    public List<Integer> spiralOrder(int[][] arr) {
+         int n = arr.length;
+        int m = arr[0].length;
+        int ans[] = new int[n*m];
+        int left =0;int right = arr[0].length-1;
+        int top = 0;int bottom = arr.length-1;
+        List<Integer> list = new ArrayList<>();
 
-            for (int i1 = endCol - 1; i1 >= startCol; i1--) {
-                if(starRow==endrow){
-                    break;
-                }
-                result.add(matrix[endrow][i1]);
+        while(left<=right && top<=bottom){
+
+            for(int i =left;i<=right;i++){
+                list.add(arr[top][i]);
             }
-            //left
-            for (int j1 = endrow - 1; j1 >= starRow + 1; j1--) {
-                if(endCol==startCol){
-                    break;
-                }
-                result.add(matrix[j1][startCol]);
+
+            top++;
+            for(int i = top;i<=bottom;i++){
+                list.add(arr[i][right]);
             }
-            starRow++;
-            endCol--;
-            endrow--;
-            startCol++;
-        }return result;
+
+            right--;
+            if(top<=bottom) {
+                for (int i = right; i >= left; i--) {
+                    list.add(arr[bottom][i]);
+                }
+            }
+
+            bottom--;
+            if(left<=right) {
+                for (int i = bottom; i >= top; i--) {
+                    list.add(arr[i][left]);
+                }
+                left++;
+            }
+
+        }
+        return list;
     }
 }
