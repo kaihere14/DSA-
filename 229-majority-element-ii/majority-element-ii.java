@@ -7,9 +7,7 @@ class Solution {
         List<Integer> answer = new ArrayList<>();
         for(int i =0;i<arr.length;i++){
             if(counter.containsKey(arr[i])){
-                int value = counter.get(arr[i]);
-                counter.remove(arr[i]);
-                counter.put(arr[i],value+1);
+                counter.put(arr[i], counter.getOrDefault(arr[i], 0) + 1);
             }else{
                counter.put(arr[i],1) ;
             }
