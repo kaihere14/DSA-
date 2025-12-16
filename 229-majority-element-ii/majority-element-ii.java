@@ -13,7 +13,7 @@ class Solution {
             }
         }
         counter.forEach((key, value) -> {
-            if(value>minLen && !answer.contains(key)){
+            if(value>minLen){
                 answer.add(key);
             }
         });
