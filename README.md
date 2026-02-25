@@ -23,7 +23,7 @@ Current version: **v1.0.0** (2024‑09‑15)
 
 | Category | Problems (sample) | Status |
 |----------|-------------------|--------|
-| **Array & Hashing** | Two Sum, 3Sum, Contains Duplicate, Majority Element, Valid Anagram | ✅ Stable |
+| **Array & Hashing** | Two Sum, 3Sum, Contains Duplicate, Majority Element, Valid Anagram, **Remove Element** | ✅ Stable |
 | **Two‑Pointer / Sliding Window** | 4Sum, Rotate Array, Trapping Rain Water, Move Zeroes | ✅ Stable |
 | **Binary Search** | Search in Rotated Sorted Array, Find Minimum in Rotated Sorted Array, Binary Search (LeetCode 704), **Median of Two Sorted Arrays** | ✅ Stable |
 | **Sorting & Selection** | Kth Largest Element, Sort Colors (0‑1‑2), Sort an Array, Kth Smallest | ✅ Stable |
@@ -65,6 +65,9 @@ DSA-
 ├── 4-median-of-two-sorted-arrays/
 │   ├── README.md                # problem description, approach, complexity, usage
 │   └── median-of-two-sorted-arrays.java
+├── 27-remove-element/
+│   ├── README.md                # newly added problem description & solution notes
+│   └── remove-element.java
 ├── 121-best-time-to-buy-and-sell-stock/
 │   └── ...
 ├── Difficulty: Basic/
@@ -132,44 +135,46 @@ All solution classes expose a `main` method that expects input via **standard in
 Typical format: space‑separated integers, one line per array, followed by any additional parameters.
 
 ```bash
-# Example: Two Sum (LeetCode 1)
+# Example: Remove Element (LeetCode 27)
 # Input format:
 #   n               -> size of the array
 #   nums[0] nums[1] ... nums[n‑1]   -> array elements
-#   target          -> target sum
+#   val             -> value to remove
 # Example input:
-#   5
-#   2 7 11 15 1
-#   9
-java -cp 1-two-sum TwoSum < input.txt
+#   8
+#   0 1 2 2 3 0 4 2
+#   2
+java -cp 27-remove-element RemoveElement < input.txt
 ```
 
-### Sample code snippet (from `two-sum.java`)
+### Sample code snippet (from `remove-element.java`)
 
 ```java
-public class TwoSum {
+public class RemoveElement {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine().trim());
         int[] nums = Arrays.stream(br.readLine().trim().split("\\s+"))
                            .mapToInt(Integer::parseInt).toArray();
-        int target = Integer.parseInt(br.readLine().trim());
+        int val = Integer.parseInt(br.readLine().trim());
 
-        int[] result = twoSum(nums, target);
-        System.out.println(result[0] + " " + result[1]);
+        int k = removeElement(nums, val);
+        System.out.println(k);
+        // Print the first k elements (optional)
+        for (int i = 0; i < k; i++) {
+            System.out.print(nums[i] + (i + 1 == k ? "\n" : " "));
+        }
     }
 
-    // Returns indices (0‑based) of the two numbers that add up to target
-    public static int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (map.containsKey(complement)) {
-                return new int[]{map.get(complement), i};
+    // In‑place removal; returns the new length k
+    public static int removeElement(int[] nums, int val) {
+        int k = 0;
+        for (int num : nums) {
+            if (num != val) {
+                nums[k++] = num;
             }
-            map.put(nums[i], i);
         }
-        return new int[]{-1, -1}; // not found (should not happen per problem constraints)
+        return k;
     }
 }
 ```
@@ -222,9 +227,9 @@ The repository is **source‑only**; there is no runtime service to deploy.
 If you wish to package a solution as a JAR:
 
 ```bash
-javac -d out 1-two-sum/two-sum.java
-jar cf two-sum.jar -C out .
-java -jar two-sum.jar < input.txt
+javac -d out 27-remove-element/remove-element.java
+jar cf remove-element.jar -C out .
+java -jar remove-element.jar < input.txt
 ```
 
 ---  
