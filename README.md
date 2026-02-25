@@ -25,7 +25,7 @@ Current version: **v1.0.0** (2024‑09‑15)
 |----------|-------------------|--------|
 | **Array & Hashing** | Two Sum, 3Sum, Contains Duplicate, Majority Element, Valid Anagram | ✅ Stable |
 | **Two‑Pointer / Sliding Window** | 4Sum, Rotate Array, Trapping Rain Water, Move Zeroes | ✅ Stable |
-| **Binary Search** | Search in Rotated Sorted Array, Find Minimum in Rotated Sorted Array, Binary Search (LeetCode 704) | ✅ Stable |
+| **Binary Search** | Search in Rotated Sorted Array, Find Minimum in Rotated Sorted Array, Binary Search (LeetCode 704), **Median of Two Sorted Arrays** | ✅ Stable |
 | **Sorting & Selection** | Kth Largest Element, Sort Colors (0‑1‑2), Sort an Array, Kth Smallest | ✅ Stable |
 | **Dynamic Programming** | Maximum Subarray (Kadane), Subarray Sum Equals K, Longest Consecutive Sequence | ✅ Stable |
 | **Matrix & Geometry** | Rotate Image, Transpose Matrix, Spiral Matrix, Matrix Diagonal Sum | ✅ Stable |
@@ -59,6 +59,9 @@ DSA-
 ├── 15-3sum/
 │   ├── 3sum.java
 │   └── README.md
+├── 4-median-of-two-sorted-arrays/
+│   ├── README.md                # newly added problem description
+│   └── median-of-two-sorted-arrays.java
 ├── 121-best-time-to-buy-and-sell-stock/
 │   └── ...
 ├── Difficulty: Basic/
@@ -283,4 +286,4 @@ For further help, open an **Issue** on GitHub or join the Discussions tab.
 
 ---  
 
-*Happy coding! 🚀*  
+*Happy coding! 🚀*
