@@ -32,6 +32,9 @@ Current version: **v1.0.0** (2024‑09‑15)
 | **String Manipulation** | Palindrome Number, Longest Palindromic Substring, Find First Occurrence | ✅ Stable |
 | **Miscellaneous** | Missing Number, Set Matrix Zeroes, Power of Two, Odd/Even checks | ✅ Stable |
 
+**Additional note:**  
+- **Median of Two Sorted Arrays (LeetCode 4)** – Implemented with a linear‑time merge approach (O(m + n) time, O(m + n) space). Measured runtime **7 ms** (≈ 25.57 % faster than the average Java submission) and memory usage **49.3 MB** (≈ 14.73 % lower than average).  
+
 *All solutions are accompanied by a short README in each problem folder that explains the approach, complexity, and usage.*  
 
 ---  
@@ -60,7 +63,7 @@ DSA-
 │   ├── 3sum.java
 │   └── README.md
 ├── 4-median-of-two-sorted-arrays/
-│   ├── README.md                # newly added problem description
+│   ├── README.md                # problem description, approach, complexity, usage
 │   └── median-of-two-sorted-arrays.java
 ├── 121-best-time-to-buy-and-sell-stock/
 │   └── ...
