@@ -1,3 +1,4 @@
+
 # 📚 DSA‑ Java Solutions  
 **A curated collection of Java implementations for classic Data Structures & Algorithms (DSA) problems, primarily from LeetCode.**  
 
@@ -11,7 +12,7 @@
 ## Overview  
 
 `DSA-` is a **self‑contained, language‑agnostic reference** for anyone preparing for technical interviews or brushing up on algorithmic thinking.  
-- **What it does** – Provides clean, well‑documented Java solutions for > 80 LeetCode problems ranging from *Array Search* to *Dynamic Programming*.  
+- **What it does** – Provides clean, well‑documented Java solutions for > 80 LeetCode problems ranging from *Array Search* to *Dynamic Programming*, now including the Hard‑level *Split Array Largest Sum* (LeetCode 410).  
 - **Why it matters** – All solutions follow a consistent style, include time/space complexity analysis, and are ready to run out‑of‑the‑box.  
 - **Target audience** – Students, interview candidates, and developers who want a quick, searchable repository of algorithmic patterns in Java.  
 
@@ -132,10 +133,41 @@ mvn -N archetype:generate -DgroupId=com.dsa -DartifactId=DSA -DarchetypeArtifact
 ### Running a solution from the command line  
 
 All solution classes expose a `main` method that expects input via **standard input** (`System.in`).  
-Typical format: space‑separated integers, one line per array, followed by any additional parameters.
+Typical format: space‑separated integers, one line per array, followed by any additional parameters.  
 
-```bash
+bash
+java -cp target/classes com.dsa.<ProblemClass> < input.txt
+
+
+### Example: Split Array Largest Sum (LeetCode 410)  
+
+**Input** (as it would appear on STDIN):  
+
+7 2 5 10 8
+2
+
+**Output** (STDOUT):  
+
+18
+
+
+The first line contains the array elements, the second line the integer `k`. The program reads the array, then `k`, and prints the minimized largest sub‑array sum.
+
 # Example: Remove Element (LeetCode 27)
+
+**Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
+
+**Input format** (STDIN):
+
+[0,1,2,2,3,0,4,2]
+2
+
+**Output** (STDOUT):
+
+5
+
+
+The first line is the array, the second line is the value to remove. After execution the first `5` elements of the array are the remaining values (order may change).
 # Input format:
 #   n               -> size of the array
 #   nums[0] nums[1] ... nums[n‑1]   -> array elements
