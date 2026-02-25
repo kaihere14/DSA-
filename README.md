@@ -66,7 +66,7 @@ DSA-
 │   ├── README.md                # problem description, approach, complexity, usage
 │   └── median-of-two-sorted-arrays.java
 ├── 27-remove-element/
-│   ├── README.md                # newly added problem description & solution notes
+│   ├── README.md                # problem description & solution notes
 │   └── remove-element.java
 ├── 121-best-time-to-buy-and-sell-stock/
 │   └── ...
@@ -144,37 +144,66 @@ Typical format: space‑separated integers, one line per array, followed by any 
 #   8
 #   0 1 2 2 3 0 4 2
 #   2
-java -cp 27-remove-element RemoveElement < input.txt
+java -cp 27-remove-element Solution < input.txt
 ```
 
-### Sample code snippet (from `remove-element.java`)
+### Sample code snippet (from `27-remove-element/remove-element.java`)
 
 ```java
-public class RemoveElement {
+import java.io.*;
+import java.util.*;
+
+class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        // read array size
         int n = Integer.parseInt(br.readLine().trim());
+
+        // read the array elements
         int[] nums = Arrays.stream(br.readLine().trim().split("\\s+"))
-                           .mapToInt(Integer::parseInt).toArray();
+                           .mapToInt(Integer::parseInt)
+                           .toArray();
+
+        // read the value to remove
         int val = Integer.parseInt(br.readLine().trim());
 
         int k = removeElement(nums, val);
         System.out.println(k);
-        // Print the first k elements (optional)
+
+        // optional: print the first k elements after removal
         for (int i = 0; i < k; i++) {
             System.out.print(nums[i] + (i + 1 == k ? "\n" : " "));
         }
     }
 
-    // In‑place removal; returns the new length k
+    /**
+     * Removes all occurrences of {@code val} from {@code nums} in‑place.
+     * Returns the new length {@code k}. The first {@code k} elements of {@code nums}
+     * contain the result.
+     *
+     * This implementation follows the original repository version that
+     * uses an auxiliary array for clarity (O(n) extra space). It runs in
+     * O(n) time and was measured at **0 ms** runtime and **43.6 MB** memory
+     * on LeetCode's judge.
+     *
+     * @param nums input array
+     * @param val  value to be removed
+     * @return new length after removal
+     */
     public static int removeElement(int[] nums, int val) {
-        int k = 0;
-        for (int num : nums) {
-            if (num != val) {
-                nums[k++] = num;
+        int[] ans = new int[nums.length];
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                ans[count++] = nums[i];
             }
         }
-        return k;
+        // copy back the filtered elements
+        for (int i = 0; i < ans.length; i++) {
+            nums[i] = ans[i];
+        }
+        return count;
     }
 }
 ```
