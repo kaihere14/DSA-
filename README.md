@@ -128,9 +128,9 @@ mvn -N archetype:generate -DgroupId=com.dsa -DartifactId=DSA -DarchetypeArtifact
 
 ---  
 
-## Usage  
+## 🚀 Usage
 
-### Running a solution from the command line  
+### Running a solution from the command line
 
 All solution classes expose a `main` method that expects input via **standard input** (`System.in`).  
 Typical format: space‑separated integers, one line per array, followed by any additional parameters.  
@@ -139,20 +139,25 @@ bash
 java -cp target/classes com.dsa.<ProblemClass> < input.txt
 
 
-### Example: Split Array Largest Sum (LeetCode 410)  
+### Example: Search a 2D Matrix (LeetCode 74)
 
-**Input** (as it would appear on STDIN):  
+**Input** (as it would appear on STDIN):
 
-7 2 5 10 8
-2
+text
+3 4
+1 3 5 7
+10 11 16 20
+23 30 34 60
+3
 
-**Output** (STDOUT):  
 
-18
+**Output** (STDOUT):
+
+text
+true
 
 
-The first line contains the array elements, the second line the integer `k`. The program reads the array, then `k`, and prints the minimized largest sub‑array sum.
-
+The first line contains the matrix dimensions (rows and columns), followed by the matrix elements, and finally the target value to search for.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
