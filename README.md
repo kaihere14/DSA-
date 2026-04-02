@@ -156,7 +156,7 @@ text
 [0, 1]
 
 
-The first line contains the matrix dimensions (rows and columns), followed by the matrix elements. The program outputs the coordinates `[i, j]` of a peak element that is strictly greater than its adjacent neighbors.
+The first line contains the matrix dimensions (rows and columns), followed by the matrix elements. The program outputs the coordinates `[i, j]` of a peak element that is strictly greater than its adjacent neighbors. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
