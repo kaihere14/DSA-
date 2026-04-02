@@ -140,25 +140,23 @@ bash
 java -cp target/classes com.dsa.<ProblemClass> < input.txt
 
 
-### Example: Search a 2D Matrix (LeetCode 74)
+### Example: Find a Peak Element II
 
 **Input** (as it would appear on STDIN):
 
 text
-3 4
-1 3 5 7
-10 11 16 20
-23 30 34 60
-3
+2 2
+1 4
+3 2
 
 
 **Output** (STDOUT):
 
 text
-true
+[0, 1]
 
 
-The first line contains the matrix dimensions (rows and columns), followed by the matrix elements, and finally the target value to search for.
+The first line contains the matrix dimensions (rows and columns), followed by the matrix elements. The program outputs the coordinates `[i, j]` of a peak element that is strictly greater than its adjacent neighbors.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
