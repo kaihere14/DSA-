@@ -337,11 +337,11 @@ For further help, open an **Issue** on GitHub or join the Discussions tab.
 
 ## 🗺️ Roadmap
 
-- **Standardize problem documentation** by adding READMEs for each solution.
-- **Add unit‑test suite** for all solutions (JUnit 5).
-- **Provide Maven/Gradle wrapper** for easier IDE imports.
-- **Include Python & C++ equivalents** for multi‑language reference.
-- **Automated CI** that compiles every solution on push.
+- [x] **Standardize problem documentation** by adding READMEs for each solution.
+- [ ] **Add unit‑test suite** for all solutions (JUnit 5).
+- [ ] **Provide Maven/Gradle wrapper** for easier IDE imports.
+- [ ] **Include Python & C++ equivalents** for multi‑language reference.
+- [ ] **Automated CI** that compiles every solution on push.
 
 ---
 ## License & Credits  
