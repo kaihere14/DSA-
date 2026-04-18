@@ -171,7 +171,22 @@ text
 4
 
 
-The first line contains the matrix dimensions (rows and columns) or the list size, followed by the elements. The program outputs the coordinates `[i, j]` of a peak element or the value of the middle node (returning the second middle for even-length lists). Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
+### Example: Reverse Linked List
+
+**Input** (STDIN):
+
+text
+5
+1 2 3 4 5
+
+
+**Output** (STDOUT):
+
+text
+5 4 3 2 1
+
+
+The first line contains the matrix dimensions (rows and columns) or the list size, followed by the elements. The program outputs the coordinates `[i, j]` of a peak element, the value of the middle node, or the reversed sequence of the list. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
