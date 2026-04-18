@@ -20,7 +20,6 @@ class Solution {
             pre = temp;
             temp = temp2;
         }
-        System.out.println(pre);
         return pre;
     }
 }
