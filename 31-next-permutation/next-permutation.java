@@ -1,40 +1,44 @@
 class Solution {
-    public void nextPermutation(int[] arr) {
-         int pivot = -1;
-        for(int i = arr.length-1; i>0;i-- ){
-            if(arr[i]>arr[i-1]){
-                pivot = i-1;
+    public static void nextPermutation(int[] nums) {
+        boolean sort = true;
+        int pivotIndex = -1;
+        for(int i = nums.length-2;i>=0;i--){
+            if(nums[i]<nums[i+1]){
+                pivotIndex=i;
                 break;
             }
         }
-        if(pivot>=0){
-            for(int i = arr.length-1;i>pivot;i--){
-            if(arr[i]>arr[pivot]){
-                int temp = arr[i];
-                arr[i] = arr[pivot];
-                arr[pivot]= temp;
+        if(pivotIndex == -1){
+            for (int i = 0; i < nums.length; i++) {
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (nums[j] < nums[i]) {
+                        int temp = nums[i];
+                        nums[i] = nums[j];
+                        nums[j] = temp;
+                    }
+                }
+
+            }
+            return;
+        }
+
+        for(int i = nums.length-1;i>=0;i--){
+            if(nums[i]>nums[pivotIndex]){
+                int temp = nums[i]; 
+                nums[i]= nums[pivotIndex];
+                nums[pivotIndex]=temp;
                 break;
             }
         }
-        int last = arr.length-1;
-        for(int i = pivot+1;i<arr.length-1;i++){
-            if(i <last){
-                int temp =arr[i];
-                arr[i]= arr[last];
-                arr[last]= temp;
-                last--;
-            }
+        int left = pivotIndex + 1, right = nums.length - 1;
+        while (left < right) {
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+            left++;
+            right--;
         }
-        }else{
-            int last = arr.length-1;
-        for(int i = 0;i<arr.length-1;i++){
-            if(i <last){
-                int temp =arr[i];
-                arr[i]= arr[last];
-                arr[last]= temp;
-                last--;
-            }
-        }
-        }
+
     }
 }
+
