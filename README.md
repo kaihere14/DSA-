@@ -140,6 +140,25 @@ bash
 java -cp target/classes com.dsa.<ProblemClass> < input.txt
 
 
+### Example: Set Matrix Zeroes
+
+**Input** (STDIN):
+
+text
+3 3
+1 1 1
+1 0 1
+1 1 1
+
+
+**Output** (STDOUT):
+
+text
+1 0 1
+0 0 0
+1 0 1
+
+
 ### Example: Find a Peak Element II
 
 **Input** (as it would appear on STDIN):
@@ -186,7 +205,7 @@ text
 5 4 3 2 1
 
 
-The first line contains the matrix dimensions (rows and columns) or the list size, followed by the elements. The program outputs the coordinates `[i, j]` of a peak element, the value of the middle node, or the reversed sequence of the list. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
+The first line contains the matrix dimensions (rows and columns) or the list size, followed by the elements. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the value of the middle node, or the reversed sequence of the list. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
