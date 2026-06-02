@@ -155,6 +155,21 @@ text
 0 0 1 1 2 2
 
 
+### Example: Best Time to Buy and Sell Stock (LeetCode 121)
+
+**Input** (STDIN):
+
+text
+6
+7 1 5 3 6 4
+
+
+**Output** (STDOUT):
+
+text
+5
+
+
 ### Example: Set Matrix Zeroes
 
 **Input** (STDIN):
@@ -235,7 +250,7 @@ text
 5 4 3 2 1
 
 
-The first line contains the matrix dimensions (rows and columns), array size, or the list size, followed by the elements. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, or the reversed sequence of the list. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
+The first line contains the matrix dimensions (rows and columns), array size, or the list size, followed by the elements. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, the reversed sequence of the list, or the maximum profit. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
