@@ -140,6 +140,21 @@ bash
 java -cp target/classes com.dsa.<ProblemClass> < input.txt
 
 
+### Example: Sort Colors (LeetCode 75)
+
+**Input** (STDIN):
+
+text
+6
+2 0 2 1 1 0
+
+
+**Output** (STDOUT):
+
+text
+0 0 1 1 2 2
+
+
 ### Example: Set Matrix Zeroes
 
 **Input** (STDIN):
