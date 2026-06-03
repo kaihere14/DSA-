@@ -273,15 +273,19 @@ The first line contains the matrix dimensions (rows and columns), array size, or
 
 **Input format** (STDIN):
 
-[0,1,2,2,3,0,4,2]
+text
+8
+0 1 2 2 3 0 4 2
 2
+
 
 **Output** (STDOUT):
 
+text
 5
 
 
-The first line is the array, the second line is the value to remove. After execution the first `5` elements of the array are the remaining values (order may change).
+The first line is the size of the array, the second line contains the array elements, and the third line is the value to remove. After execution, the first `5` elements of the array are the remaining values (order may change).
 # Input format:
 #   n               -> size of the array
 #   nums[0] nums[1] ... nums[n‑1]   -> array elements
