@@ -4,15 +4,8 @@ class Solution {
        int ans[][] =new int[intervals.length][intervals[0].length];
        int prev = 0;
        int curr = 0;
-       for (int i = 0; i < intervals.length - 1; i++) {
-        for (int j = 0; j < intervals.length - 1 - i; j++) {
-                if (intervals[j][0] > intervals[j + 1][0]) {
-                    int[] temp = intervals[j];
-                    intervals[j] = intervals[j + 1];
-                    intervals[j + 1] = temp;
-                }
-            }
-        }
+       Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+       
        for(int i =0 ;i<intervals.length;i++){
         if(i==0){
             ans[curr++]=intervals[0];
