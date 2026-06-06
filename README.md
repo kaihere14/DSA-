@@ -225,6 +225,24 @@ text
 1 0 1
 
 
+### Example: Search a 2D Matrix (LeetCode 74)
+
+**Input** (STDIN):
+
+text
+3 4
+1 3 5 7
+10 11 16 20
+23 30 34 60
+3
+
+
+**Output** (STDOUT):
+
+text
+true
+
+
 ### Example: Find a Peak Element II
 
 **Input** (as it would appear on STDIN):
@@ -286,7 +304,7 @@ text
 5 4 3 2 1
 
 
-The first line contains the matrix dimensions (rows and columns), array size, or the list size, followed by the elements. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, the reversed sequence of the list, the merged sorted array, the merged intervals, or the maximum profit. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
+The first line contains the matrix dimensions (rows and columns), array size, or the list size, followed by the elements. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, the reversed sequence of the list, the merged sorted array, the merged intervals, the maximum profit, or a boolean indicating if the target is found. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
