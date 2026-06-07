@@ -304,7 +304,21 @@ text
 5 4 3 2 1
 
 
-The first line contains the matrix dimensions (rows and columns), array size, or the list size, followed by the elements. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, the reversed sequence of the list, the merged sorted array, the merged intervals, the maximum profit, or a boolean indicating if the target is found. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
+### Example: Pow(x, n) (LeetCode 50)
+
+**Input** (STDIN):
+
+text
+2.0 10
+
+
+**Output** (STDOUT):
+
+text
+1024.0
+
+
+The first line contains the matrix dimensions (rows and columns), array size, or the list size, followed by the elements, or the base and exponent values. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, the reversed sequence of the list, the merged sorted array, the merged intervals, the maximum profit, the calculated power, or a boolean indicating if the target is found. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
