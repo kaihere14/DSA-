@@ -13,11 +13,6 @@ class Solution {
         if(largestIndex==-1){
             return "";
         }
-        String ans = "";
-        for(int i = 0 ;i<=largestIndex;i++){
-            ans += num.charAt(i);
-        }
-
-        return ans;
+        return num.substring(0,largestIndex+1);
     }
 }
