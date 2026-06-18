@@ -1,15 +1,20 @@
 class Solution {
     public static int[] singleNumber(int[] nums) {
         int ans[] = {0,0};
-        Map<Integer,Integer> counter = new HashMap<>();
-        for(int i = 0 ; i<nums.length;i++){
-            counter.put(nums[i], counter.getOrDefault(nums[i], 0)+1);
+        Arrays.sort(nums);
+        int start = 0;
+        for(int i = 1 ;i<nums.length;i++){
+            if(nums[i]!=nums[i-1] && i != nums.length-1){
+                ans[start++]= nums[i-1];
+            }else{
+                i++;
+            }
         }
-        int start=0;
-        for (Map.Entry<Integer, Integer> entry : counter.entrySet()) {
-           if(entry.getValue()==1){
-             ans[start++]= entry.getKey();
-           }
+        if(start==0){
+            ans[start++]=nums[nums.length-2];
+        }
+        if(start==1){
+            ans[start]=nums[nums.length-1];
         }
         return ans;
     }
