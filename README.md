@@ -7,8 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/stargazers)  
 [![GitHub forks](https://img.shields.io/github/forks/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/network)  
 
-
----  
+---
 ## Overview  
 
 `DSA-` is a **self‑contained, language‑agnostic reference** for anyone preparing for technical interviews or brushing up on algorithmic thinking.  
