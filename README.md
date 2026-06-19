@@ -331,6 +331,20 @@ text
 true
 
 
+### Example: Three Divisors (LeetCode 2083)
+
+**Input** (STDIN):
+
+text
+4
+
+
+**Output** (STDOUT):
+
+text
+true
+
+
 ### Example: Subsets (LeetCode 78)
 
 **Input** (STDIN):
@@ -346,7 +360,7 @@ text
 [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 
-The first line contains the matrix dimensions (rows and columns), array size, list size, base and exponent values, or a single integer. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, the reversed sequence of the list, the merged sorted array, the merged intervals, the maximum profit, the calculated power, all generated subsets, or a boolean indicating if the target is found or if a number is a power of two. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
+The first line contains the matrix dimensions (rows and columns), array size, list size, base and exponent values, or a single integer. The program outputs the modified matrix, coordinates `[i, j]` of a peak element, the next permutation, the value of the middle node, the reversed sequence of the list, the merged sorted array, the merged intervals, the maximum profit, the calculated power, all generated subsets, or a boolean indicating if the target is found, if a number is a power of two, or if a number has exactly three divisors. Some problems may also include a `Notes.md` file containing metadata such as time taken to solve.
 # Example: Remove Element (LeetCode 27)
 
 **Problem statement**: Remove all instances of a given value `val` in‑place and return the new length of the array.
