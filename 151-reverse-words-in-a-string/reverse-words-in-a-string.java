@@ -2,7 +2,7 @@ class Solution {
     public  static String reverseWords(String s) {
         s = s.trim();
         String ans ="";
-        String[] words = s.trim().split(" ");
+        String[] words = s.trim().split("\\s+");
         for(int i = 0;i<words.length/2;i++){
             String temp = words[i];
             words[i] = words[words.length-i-1];
@@ -13,9 +13,7 @@ class Solution {
                 ans += words[i];
                 break;
             }
-            if(words[i]!=""){
                 ans += words[i]+" ";
-            }
         };
         return ans;
     }
