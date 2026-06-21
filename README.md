@@ -7,6 +7,7 @@ A curated collection of Java implementations for classic Data Structures & Algor
 [![Java 17](https://img.shields.io/badge/Java-17%20%7C%20OpenJDK-blue)](https://openjdk.org/projects/jdk/17/)
 [![GitHub stars](https://img.shields.io/github/stars/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/network)
+[![Problems Solved](https://img.shields.io/badge/Problems%20Solved-80%2B-orange)](#)
 
 ---
 ## Overview  
@@ -49,15 +50,15 @@ Each solution includes:
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
-├── Difficulty: Basic/            # Basic level platform problems
+├── Difficulty: Basic/            # Basic level platform problems (e.g., GeeksforGeeks)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
-├── Difficulty: Easy/             # Easy level platform problems
+├── Difficulty: Easy/             # Easy level platform problems (e.g., GeeksforGeeks)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
-├── Difficulty: Medium/           # Medium level platform problems
+├── Difficulty: Medium/           # Medium level platform problems (e.g., GeeksforGeeks)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
