@@ -3,18 +3,14 @@ class Solution {
         s = s.trim();
         String ans ="";
         String[] words = s.trim().split("\\s+");
-        for(int i = 0;i<words.length/2;i++){
-            String temp = words[i];
-            words[i] = words[words.length-i-1];
-            words[words.length-i-1]=temp;
-        }
-        for(int i = 0; i<words.length;i++){
-            if(i==words.length-1){
+        for(int i = words.length-1;i>=0;i--){
+            if(i==0){
                 ans += words[i];
                 break;
             }
-                ans += words[i]+" ";
-        };
+            ans += words[i]+" ";
+        }
+
         return ans;
     }
 }
