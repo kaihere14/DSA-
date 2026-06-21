@@ -1,15 +1,14 @@
 
-# 📚 DSA - Java Solutions  
+# 📚 DSA - Java Solutions
 
-A curated collection of Java implementations for classic Data Structures & Algorithms (DSA) problems from LeetCode.  
+A curated collection of Java implementations for classic Data Structures & Algorithms (DSA) problems from LeetCode and GeeksforGeeks.
 
-[![License](https://img.shields.io/github/license/kaihere14/DSA-)](LICENSE)  
-[![Java 17](https://img.shields.io/badge/Java-17%20%7C%20OpenJDK-blue)](https://openjdk.org/projects/jdk/17/)  
-[![GitHub stars](https://img.shields.io/github/stars/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/stargazers)  
-[![GitHub forks](https://img.shields.io/github/forks/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/network)  
+[![License](https://img.shields.io/github/license/kaihere14/DSA-)](LICENSE)
+[![Java 17](https://img.shields.io/badge/Java-17%20%7C%20OpenJDK-blue)](https://openjdk.org/projects/jdk/17/)
+[![GitHub stars](https://img.shields.io/github/stars/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/network)
 
 ---
-
 ## Overview  
 
 **DSA** is a self-contained Java reference for technical interview preparation. It provides:  
