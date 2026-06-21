@@ -45,14 +45,23 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/         # e.g., 1-two-sum/
-│   ├── README.md                # Solution documentation
-│   ├── Notes.md                 # Optional notes and performance metrics
-│   └── <problem-name>.java      # Self-contained Java implementation
-├── Difficulty: Basic/           # Basic level problems
-├── Difficulty: Easy/            # Easy level problems
-├── Difficulty: Medium/          # Medium level problems
-└── README.md                    # Main repository documentation
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/)
+│   ├── README.md                 # Problem description & solution explanation
+│   ├── Notes.md                  # Optional notes & approach details
+│   └── <problem-name>.java       # Java solution file
+├── Difficulty: Basic/            # Basic level platform problems
+│   └── <problem-name>/
+│       ├── README.md
+│       └── <problem-name>.java
+├── Difficulty: Easy/             # Easy level platform problems
+│   └── <problem-name>/
+│       ├── README.md
+│       └── <problem-name>.java
+├── Difficulty: Medium/           # Medium level platform problems
+│   └── <problem-name>/
+│       ├── README.md
+│       └── <problem-name>.java
+└── README.md                     # Main repository documentation
 
 ## Getting Started  
 
