@@ -5,12 +5,11 @@ class Solution {
         String[] words = s.trim().split("\\s+");
         for(int i = words.length-1;i>=0;i--){
             if(i==0){
-                ans += words[i];
+                ans = new String(ans + words[i]);
                 break;
             }
-            ans += words[i]+" ";
+            ans = new String(ans + words[i] + " ");
         }
-
         return ans;
     }
 }
