@@ -1,35 +1,26 @@
-
 class Solution {
     public static int countPrimes(int n) {
-        
+        if (n <= 2) return 0;
+
+        boolean[] isPrime = new boolean[n];
+        Arrays.fill(isPrime, true);
+
+        isPrime[0] = false;
+        isPrime[1] = false;
+
+        for (int i = 2; i * i < n; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j < n; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
 
         int count = 0;
-        int arr[] = new int[n];
-        Arrays.fill(arr, 1);
-        
-        int start = 2;
-        while(start<n){
-            int curr = start;
-            if(arr[start]==0){
-                start++;
-                continue;
-            };
-            int mul =1;
-            int value = 0;
-            while(value<n){
-                if(value!=start){
-                    arr[value] = 0;
-                }
-                value = curr*mul;
-                mul++;
-            }
-            start++;
+        for (int i = 2; i < n; i++) {
+            if (isPrime[i]) count++;
         }
-        for(int i =2;i<arr.length;i++){
-            if(arr[i]==1){
-                count++;
-            }
-        }
+
         return count;
     }
 }
