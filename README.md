@@ -48,6 +48,7 @@ Each solution includes:
 
 ├── <problem-id>-<slug>/         # e.g., 1-two-sum/
 │   ├── README.md                # Solution documentation
+│   ├── Notes.md                 # Optional notes and performance metrics
 │   └── <problem-name>.java      # Self-contained Java implementation
 ├── Difficulty: Basic/           # Basic level problems
 ├── Difficulty: Easy/            # Easy level problems
