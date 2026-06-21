@@ -1,3 +1,4 @@
+
 # 📚 DSA - Java Solutions  
 
 A curated collection of Java implementations for classic Data Structures & Algorithms (DSA) problems from LeetCode.  
@@ -42,20 +43,16 @@ Each solution includes:
 
 ---
 
-## Repository Structure  
+## 📂 Repository Structure
 
-```
-DSA/
+
 ├── <problem-id>-<slug>/         # e.g., 1-two-sum/
 │   ├── README.md                # Solution documentation
-│   └── <problem-name>.java      # Self-contained implementation
-├── Difficulty: Basic/           # Organized by difficulty level
-├── Difficulty: Easy/
-├── Difficulty: Medium/
-└── README.md                    # This file
-```
-
----
+│   └── <problem-name>.java      # Self-contained Java implementation
+├── Difficulty: Basic/           # Basic level problems
+├── Difficulty: Easy/            # Easy level problems
+├── Difficulty: Medium/          # Medium level problems
+└── README.md                    # Main repository documentation
 
 ## Getting Started  
 
