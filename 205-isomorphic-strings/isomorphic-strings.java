@@ -1,23 +1,18 @@
 class Solution {
     public static boolean isIsomorphic(String s, String t) {
-        Boolean ans = true;
-        HashMap<Character,Character> count = new HashMap<>();
-        for(int i =0 ;i<s.length();i++ ){
-            if(count.containsKey(s.charAt(i))){
-                char curr = count.get(s.charAt(i));
-                if(t.charAt(i)==curr ){
-                    continue;
-                }else{
-                    ans  = false;
-                    break;
-                }
-            }else{
-                if(count.containsValue(t.charAt(i))){
-                    return false;
-                }
-                count.put(s.charAt(i), t.charAt(i));
-            }
+        HashMap<Character, Character> sToT = new HashMap<>();
+        HashMap<Character, Character> tToS = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char sc = s.charAt(i);
+            char tc = t.charAt(i);
+
+            if (sToT.containsKey(sc) && sToT.get(sc) != tc) return false;
+            if (tToS.containsKey(tc) && tToS.get(tc) != sc) return false;
+
+            sToT.put(sc, tc);
+            tToS.put(tc, sc);
         }
-        return ans;
+        return true;
     }
 }
