@@ -45,20 +45,20 @@ Each solution includes:
 
 ## 📂 Repository Structure
 
-
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 812-rotate-string/)
+text
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 451-sort-characters-by-frequency/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
-├── Difficulty: Basic/            # Basic level platform problems (e.g., GeeksforGeeks)
+├── Difficulty: Basic/            # Basic level platform problems (e.g., Array Search/)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
-├── Difficulty: Easy/             # Easy level platform problems (e.g., GeeksforGeeks)
+├── Difficulty: Easy/             # Easy level platform problems (e.g., Binary Search/)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
-├── Difficulty: Medium/           # Medium level platform problems (e.g., GeeksforGeeks)
+├── Difficulty: Medium/           # Medium level platform problems (e.g., Kadane's Algorithm/)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
