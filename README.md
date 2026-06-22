@@ -7,7 +7,7 @@ A curated collection of Java implementations for classic Data Structures & Algor
 [![Java 17](https://img.shields.io/badge/Java-17%20%7C%20OpenJDK-blue)](https://openjdk.org/projects/jdk/17/)
 [![GitHub stars](https://img.shields.io/github/stars/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/kaihere14/DSA-?style=social)](https://github.com/kaihere14/DSA-/network)
-[![Problems Solved](https://img.shields.io/badge/Problems%20Solved-82-orange)](#)
+[![Problems Solved](https://img.shields.io/badge/Problems%20Solved-83-orange)](#)
 
 ---
 ## Overview  
