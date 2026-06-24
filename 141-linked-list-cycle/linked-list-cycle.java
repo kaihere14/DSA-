@@ -12,14 +12,20 @@
 public class Solution {
 
     public boolean hasCycle(ListNode head) {
-        // Write your logic here
-        if(head==null)return false;
-        Stack<ListNode> store = new Stack<>();
-        while(head.next!=null){
-            if(store.contains(head.next))return true;
-            store.add(head.next);
-            head = head.next;
+
+    ListNode slow = head;
+    ListNode fast = head;
+
+    while(fast != null && fast.next != null){
+
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if(slow == fast){
+            return true;
         }
-        return false;
     }
+
+    return false;
+}
 }
