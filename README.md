@@ -45,8 +45,8 @@ Each solution includes:
 
 ## 📂 Repository Structure
 
-text
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 2216-delete-the-middle-node-of-a-linked-list/)
+
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 328-odd-even-linked-list/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
