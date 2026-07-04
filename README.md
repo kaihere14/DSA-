@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 148-sort-list/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 2-add-two-numbers/, 148-sort-list/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
