@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 2-add-two-numbers/, 3275-minimum-number-of-pushes-to-type-word-i/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 3275-minimum-number-of-pushes-to-type-word-i/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
