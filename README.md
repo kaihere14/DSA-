@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 42-trapping-rain-water/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 402-remove-k-digits/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
@@ -63,6 +63,7 @@ Each solution includes:
 │       ├── README.md
 │       └── <problem-name>.java
 └── README.md                     # Main repository documentation
+
 ## Getting Started  
 
 ### Prerequisites  
