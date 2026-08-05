@@ -9,7 +9,7 @@ class Solution {
         int curr_max = Integer.MIN_VALUE;
         int curr_index = -1;
 
-        // Build first window
+        
         for (int i = 0; i < k; i++) {
             deque.addLast(nums[i]);
 
