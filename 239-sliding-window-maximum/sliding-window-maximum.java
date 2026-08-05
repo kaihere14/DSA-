@@ -22,7 +22,7 @@ class Solution {
         ans[ansIdx++] = curr_max;
         curr_index--;
 
-        // Slide window
+        
         for (int i = k; i < nums.length; i++) {
 
             deque.removeFirst();
