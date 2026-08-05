@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 402-remove-k-digits/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 85-maximal-rectangle/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
