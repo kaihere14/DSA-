@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 239-sliding-window-maximum/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 937-online-stock-span/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
