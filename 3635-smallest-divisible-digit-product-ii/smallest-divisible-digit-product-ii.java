@@ -1,119 +1,131 @@
-import java.util.*;
-
 class Solution {
-    int A, B;
-    int[][] minDigits23;
-    int[] V2 = new int[10], V3 = new int[10], V5 = new int[10], V7 = new int[10];
+    int primes[] = new int[] { 2, 3, 5, 7 };
+    int maxPrime = primes[primes.length - 1];
 
     public String smallestNumber(String num, long t) {
-        V2[2]=1; V2[4]=2; V2[6]=1; V2[8]=3;
-        V3[3]=1; V3[6]=1; V3[9]=2;
-        V5[5]=1;
-        V7[7]=1;
+        int primeCount[] = new int[maxPrime + 1];
+        int numLength = num.length();
+        int minLength;
+        int firstZeroIndexFromLeft = 0;
 
-        long tt = t;
-        int a=0,b=0,c=0,d=0;
-        while (tt % 2 == 0) { tt/=2; a++; }
-        while (tt % 3 == 0) { tt/=3; b++; }
-        while (tt % 5 == 0) { tt/=5; c++; }
-        while (tt % 7 == 0) { tt/=7; d++; }
-        if (tt != 1) return "-1";
-        A=a; B=b;
-
-        minDigits23 = new int[a+1][b+1];
-        for (int[] row : minDigits23) Arrays.fill(row, -1);
-        minDigits23[0][0] = 0;
-        ArrayDeque<int[]> queue = new ArrayDeque<>();
-        queue.add(new int[]{0,0});
-        int[][] moves = {{1,0},{0,1},{2,0},{1,1},{3,0},{0,2}};
-        while(!queue.isEmpty()){
-            int[] cur = queue.poll();
-            int i=cur[0], j=cur[1];
-            int base = minDigits23[i][j];
-            for(int[] mv: moves){
-                int ni = Math.min(a, i+mv[0]);
-                int nj = Math.min(b, j+mv[1]);
-                if (minDigits23[ni][nj]==-1){
-                    minDigits23[ni][nj]=base+1;
-                    queue.add(new int[]{ni,nj});
-                }
+        for (int prime : primes) {
+            while (t % prime == 0) {
+                t /= prime;
+                primeCount[prime]++;
             }
         }
 
-        int n = num.length();
-        int[] digits = new int[n];
-        for(int i=0;i<n;i++) digits[i]=num.charAt(i)-'0';
-
-        int firstZero = n;
-        for(int i=0;i<n;i++){ if(digits[i]==0){ firstZero=i; break; } }
-
-        long[] P2=new long[n+1], P3=new long[n+1], P5=new long[n+1], P7=new long[n+1];
-        for(int i=0;i<n;i++){
-            int dg=digits[i];
-            P2[i+1]=P2[i]+V2[dg];
-            P3[i+1]=P3[i]+V3[dg];
-            P5[i+1]=P5[i]+V5[dg];
-            P7[i+1]=P7[i]+V7[dg];
+        if (t != 1) {
+            return "-1";
         }
 
-        if (firstZero==n){
-            if (P2[n]>=a && P3[n]>=b && P5[n]>=c && P7[n]>=d){
+        minLength = getMinLength(primeCount);
+
+        if (numLength < minLength) {
+            return buildSuffix(primeCount, minLength, new char[minLength]);
+        }
+
+        char[] result = new char[numLength + 1];
+
+        for (int i = 0; firstZeroIndexFromLeft < numLength
+                && (result[++i] = num.charAt(firstZeroIndexFromLeft)) != '0'; firstZeroIndexFromLeft++) {
+            logNum(primeCount, result[i], -1);
+        }
+
+        if (getMinLength(primeCount) == 0) {
+            if (firstZeroIndexFromLeft == numLength) {
                 return num;
             }
+            Arrays.fill(result, ++firstZeroIndexFromLeft, result.length, '1');
+            return new String(result, 1, numLength);
         }
 
-        for(int i=n-1;i>=0;i--){
-            if (i>firstZero) continue;
-            for(int dg=digits[i]+1; dg<=9; dg++){
-                long used2 = P2[i]+V2[dg];
-                long used3 = P3[i]+V3[dg];
-                long used5 = P5[i]+V5[dg];
-                long used7 = P7[i]+V7[dg];
-                int ra = (int)Math.max(0, a-used2);
-                int rb = (int)Math.max(0, b-used3);
-                int rc = (int)Math.max(0, c-used5);
-                int rd = (int)Math.max(0, d-used7);
-                int remLen = n-1-i;
-                if (feasible(ra,rb,rc,rd,remLen)){
-                    StringBuilder sb = new StringBuilder();
-                    sb.append(num, 0, i);
-                    sb.append((char)('0'+dg));
-                    int[] suffix = buildSuffix(ra,rb,rc,rd,remLen);
-                    for(int x: suffix) sb.append((char)('0'+x));
-                    return sb.toString();
+        for (int last = numLength - 1, end = Math.min(firstZeroIndexFromLeft, last); end >= 0; end--) {
+            for (logNum(primeCount, result[end + 1], 1); ++result[end + 1] <= '9'; logNum(primeCount, result[end + 1], 1)) {
+                logNum(primeCount, result[end + 1], -1);
+                if (getMinLength(primeCount) <= last - end) {
+                    return buildSuffix(primeCount, last - end, result);
                 }
             }
         }
 
-        int M = c + d + minDigits23[a][b];
-        int L = Math.max(n+1, M);
-        int[] full = buildSuffix(a,b,c,d,L);
-        StringBuilder sb = new StringBuilder();
-        for(int x: full) sb.append((char)('0'+x));
-        return sb.toString();
+        return buildSuffix(primeCount, result.length, result);
     }
 
-    boolean feasible(int ra,int rb,int rc,int rd,int length){
-        if(ra>A || rb>B) return false;
-        int need = rc+rd+minDigits23[ra][rb];
-        return need<=length;
-    }
-
-    int[] buildSuffix(int ra,int rb,int rc,int rd,int length){
-        int[] res = new int[length];
-        for(int pos=0; pos<length; pos++){
-            for(int dg=1; dg<=9; dg++){
-                int nra = Math.max(0, ra-V2[dg]);
-                int nrb = Math.max(0, rb-V3[dg]);
-                int nrc = Math.max(0, rc-V5[dg]);
-                int nrd = Math.max(0, rd-V7[dg]);
-                if (feasible(nra,nrb,nrc,nrd,length-pos-1)){
-                    res[pos]=dg;
-                    ra=nra;rb=nrb;rc=nrc;rd=nrd;
-                    break;
-                }
-            }
+    void logNum(int[] primeCount, int num, int value) {
+        if (num < '2') {
+            return;
         }
-        return res;
+
+        if (num == '9') {
+            primeCount[3] += value << 1;
+        } else if (num == '4') {
+            primeCount[2] += value << 1;
+        } else if (num == '8') {
+            primeCount[2] += value * 3;
+        } else if (num == '6') {
+            primeCount[2] += value;
+            primeCount[3] += value;
+        } else {
+            primeCount[num - '0'] += value;
+        }
+    }
+
+    String buildSuffix(int[] primeCount, int targetLength, char[] result) {
+        int index = result.length;
+
+        while (primeCount[3] > 1) {
+            primeCount[3] -= 2;
+            result[--index] = '9';
+        }
+
+        while (primeCount[2] > 2) {
+            primeCount[2] -= 3;
+            result[--index] = '8';
+        }
+
+        while (primeCount[7]-- > 0) {
+            result[--index] = '7';
+        }
+
+        if (primeCount[2] > 0 && primeCount[3] > 0) {
+            result[--index] = '6';
+            primeCount[2]--;
+            primeCount[3]--;
+        }
+
+        while (primeCount[5]-- > 0) {
+            result[--index] = '5';
+        }
+
+        while (primeCount[2] > 1) {
+            primeCount[2] -= 2;
+            result[--index] = '4';
+        }
+
+        while (primeCount[3] > 0) {
+            primeCount[3]--;
+            result[--index] = '3';
+        }
+
+        while (primeCount[2] > 0) {
+            primeCount[2]--;
+            result[--index] = '2';
+        }
+
+        while (index + targetLength != result.length) {
+            result[--index] = '1';
+        }
+
+        return targetLength == result.length ? new String(result) : new String(result, 1, result.length - 1);
+    }
+
+    int getMinLength(int[] primeCount) {
+        int count2 = Math.max(0, primeCount[2]);
+        int count3 = Math.max(0, primeCount[3]);
+        int count23 = (count3 & 1) + (count2 % 3);
+
+        return (count3 >> 1) + (count2 / 3) + Math.max(0, primeCount[7]) + Math.max(0, primeCount[5])
+                + (count23 == 3 ? 2 : count23 > 0 ? 1 : 0);
     }
 }
