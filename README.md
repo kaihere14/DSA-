@@ -92,7 +92,7 @@ All Java files are self-contained and can be compiled independently.
 
 ---
 
-## Usage  
+## Usage
 
 Solutions accept input via standard input (`System.in`) in the following format:  
 - First line: size of array/list/matrix  
@@ -102,17 +102,17 @@ Solutions accept input via standard input (`System.in`) in the following format:
 ### Example: Remove Element (LeetCode 27)  
 
 **Input** (STDIN):  
-```
+text
 8
 0 1 2 2 3 0 4 2
 2
-```
+
 
 **Output** (STDOUT):  
-```
+text
 5
 0 1 3 0 4 0
-```
+
 
 ### Code Structure  
 
@@ -122,7 +122,6 @@ Each solution follows this pattern:
 3. Print results (e.g., new array length, transformed data)  
 
 ---
-
 ## Contributing  
 
 1. **Fork** the repository  
