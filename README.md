@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 146-lru-cache/, 3635-smallest-divisible-digit-product-ii/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 146-lru-cache/, 3584-find-the-lexicographically-smallest-valid-sequence/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
@@ -157,7 +157,7 @@ For unresolved issues, open a GitHub [issue](https://github.com/kaihere14/DSA-/i
 
 ---
 
-## Roadmap  
+## 🗺️ Roadmap
 
 - [x] Standardize documentation for all solutions  
 - [ ] Add JUnit 5 test suite  
@@ -166,7 +166,6 @@ For unresolved issues, open a GitHub [issue](https://github.com/kaihere14/DSA-/i
 - [ ] Implement CI for automated compilation and testing  
 
 ---
-
 ## License & Credits  
 
 **License:** [MIT License](LICENSE)  
