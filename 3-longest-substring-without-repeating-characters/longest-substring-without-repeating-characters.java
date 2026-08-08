@@ -19,13 +19,13 @@ class Solution {
             int index = -1;
             for(int j = i ; j<=Math.min(i + unique_counter, s.length()-1) ; j++){
                 if(ans==unique_counter)return ans;
-                int in = (int)s.charAt(j);
-                if (arr[in]!=0) {
+               
+                if (arr[s.charAt(j)]!=0) {
                     index = j;
                     break;
                 }
 
-                arr[in]=1;
+                arr[s.charAt(j)]=1;
                 index = j + 1;
             } 
                 ans = Math.max(ans,index-i);
