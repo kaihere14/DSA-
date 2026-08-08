@@ -12,17 +12,13 @@ class Solution {
         }
         
 
-        
-
-        
         for(int i = 0 ; i < s.length() ; i++){
             
             int arr[] = new int[250];
-            
-
             boolean found = false;;
             int index = -1;
             for(int j = i ; j<=Math.min(i + unique_counter, s.length()-1) ; j++){
+                if(ans==unique_counter)return ans;
                 int in = (int)s.charAt(j);
                 if (arr[in]!=0) {
                     index = j;
