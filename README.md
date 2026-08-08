@@ -50,15 +50,15 @@ Each solution includes:
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
-├── Difficulty: Basic/            # Basic level platform problems (e.g., Array Search/)
+├── Difficulty: Basic/            # Basic level platform problems (e.g., Array Search/, Diagonal sum/)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
-├── Difficulty: Easy/             # Easy level platform problems (e.g., Binary Search/)
+├── Difficulty: Easy/             # Easy level platform problems (e.g., Binary Search/, Second Largest/)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
-├── Difficulty: Medium/           # Medium level platform problems (e.g., Kadane's Algorithm/)
+├── Difficulty: Medium/           # Medium level platform problems (e.g., Kadane's Algorithm/, Spiral Matrix/)
 │   └── <problem-name>/
 │       ├── README.md
 │       └── <problem-name>.java
