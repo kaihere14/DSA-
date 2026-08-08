@@ -19,7 +19,6 @@ class DLL {
     DLL() {
         head = new Node(-1, -1, 0);
         tail = new Node(-1, -1, 0);
-
         head.next = tail;
         tail.prev = head;
     }
@@ -28,113 +27,97 @@ class DLL {
 class LFUCache {
     Map<Integer, DLL> freqMap = new HashMap<>();
     Map<Integer, Node> keyMap = new HashMap<>();
-    int capacity = 0;
-    int u_capacity = 0;
+
+    int capacity;
+    int u_capacity;
     int freq = 1;
 
     public LFUCache(int capacity) {
         this.capacity = capacity;
     }
-    
+
+    private void remove(Node node) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+    }
+
+    private void add(Node node, DLL list) {
+        node.prev = list.tail.prev;
+        node.next = list.tail;
+        list.tail.prev = node;
+        node.prev.next = node;
+    }
+
+    private void increaseFreq(Node node) {
+        int currFreq = node.freq;
+        int nextFreq = currFreq + 1;
+
+        DLL nextList = freqMap.get(nextFreq);
+
+        if (nextList == null) {
+            nextList = new DLL();
+            freqMap.put(nextFreq, nextList);
+        }
+
+        remove(node);
+
+        node.freq = nextFreq;
+        add(node, nextList);
+
+        DLL currList = freqMap.get(currFreq);
+
+        if (currList.head.next == currList.tail && currFreq == freq) {
+            freq++;
+        }
+    }
+
     public int get(int key) {
-        if(keyMap.get(key)!=null){
-            Node node = keyMap.get(key);
-            int curr_freq = node.freq;
-            int next_freq = node.freq+1;
-            int ans = node.value;
- 
-            DLL d = freqMap.get(next_freq);
+        Node node = keyMap.get(key);
 
-            if (d == null) {
-                d = new DLL();
-                freqMap.put(next_freq, d);
-            }
-
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
-
-            node.freq = next_freq;
-
-
-            node.prev = d.tail.prev;
-            node.next = d.tail;
-            d.tail.prev = node;
-            node.prev.next = node;
-
-            DLL curr = freqMap.get(curr_freq);
-            if (curr.head.next == curr.tail && curr_freq == freq) {
-                freq++;
-            }
-
-            return ans;
-        }else{
+        if (node == null) {
             return -1;
         }
+
+        int value = node.value;
+        increaseFreq(node);
+
+        return value;
     }
-    
+
     public void put(int key, int value) {
-        if(this.capacity == 0)return;
+        if (capacity == 0) {
+            return;
+        }
 
         Node node = keyMap.get(key);
-        if(node!=null){
+
+        if (node != null) {
             node.value = value;
-            int curr_freq = node.freq;
-            int next_freq = node.freq+1;
-
-            DLL d = freqMap.get(next_freq);
-
-            if (d == null) {
-                d = new DLL();
-                freqMap.put(next_freq, d);
-            }
-
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
-            
-            node.freq = next_freq;
-
-
-            node.prev = d.tail.prev;
-            node.next = d.tail;
-            d.tail.prev = node;
-            node.prev.next = node;
-
-            DLL curr = freqMap.get(curr_freq);
-            if (curr.head.next == curr.tail && curr_freq == freq) {
-                freq++;
-            }
+            increaseFreq(node);
             return;
-        }else{
-            node = new Node(key,value,1);
         }
-        DLL d = freqMap.get(this.freq);
 
-        if(this.capacity<=this.u_capacity){
-            Node r_node = d.head.next;
-            r_node.next.prev = r_node.prev;
-            r_node.prev.next = r_node.next;
-            keyMap.remove(r_node.key);
-            this.u_capacity--;
-        }
-        DLL newList = freqMap.get(1);
-        if(newList==null){
-            newList = new DLL();
-            freqMap.put(1,newList);
-        }
-        node.prev = newList.tail.prev;
-        node.next = newList.tail;
-        node.prev.next = node;
-        newList.tail.prev = node;
-        keyMap.put(key, node);   
-        this.freq=1;
-        this.u_capacity++;
+        if (u_capacity >= capacity) {
+            DLL list = freqMap.get(freq);
+            Node removeNode = list.head.next;
 
+            remove(removeNode);
+            keyMap.remove(removeNode.key);
+            u_capacity--;
+        }
+
+        DLL list = freqMap.get(1);
+
+        if (list == null) {
+            list = new DLL();
+            freqMap.put(1, list);
+        }
+
+        node = new Node(key, value, 1);
+        add(node, list);
+
+        keyMap.put(key, node);
+        freq = 1;
+        u_capacity++;
     }
 }
-
-/**
- * Your LFUCache object will be instantiated and called as such:
- * LFUCache obj = new LFUCache(capacity);
- * int param_1 = obj.get(key);
- * obj.put(key,value);
- */
