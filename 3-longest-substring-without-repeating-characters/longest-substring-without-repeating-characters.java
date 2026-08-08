@@ -16,21 +16,17 @@ class Solution {
             
             int arr[] = new int[250];
             boolean found = false;;
-            int index = -1;
+           
             for(int j = i ; j<=Math.min(i + unique_counter, s.length()-1) ; j++){
-                if(ans==unique_counter)return ans;
+            
                
-                if (arr[s.charAt(j)]!=0) {
-                    index = j;
-                    break;
-                }
+                if (arr[s.charAt(j)]!=0) break;
 
                 arr[s.charAt(j)]=1;
-                index = j + 1;
-            } 
-                ans = Math.max(ans,index-i);
-
+                ans = Math.max(ans,j-i+1);
+            }
         }
+
         return ans;
     }
 }
