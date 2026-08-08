@@ -1,7 +1,7 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
        
-        int arr[] = new int[250];
+        int arr[] = new int[128];
         for(int i = 0 ; i < arr.length ; i++){
             arr[i] = -1;
         }
