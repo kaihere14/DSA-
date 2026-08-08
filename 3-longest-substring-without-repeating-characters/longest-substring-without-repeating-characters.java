@@ -12,20 +12,24 @@ class Solution {
         }
         
 
-        System.out.println(unique_counter);
+        
 
         
         for(int i = 0 ; i < s.length() ; i++){
-            Set<Character> counter = new HashSet<>();
+            
+            int arr[] = new int[250];
+            
+
             boolean found = false;;
             int index = -1;
             for(int j = i ; j<=Math.min(i + unique_counter, s.length()-1) ; j++){
-                if (counter.contains(s.charAt(j))) {
+                int in = (int)s.charAt(j);
+                if (arr[in]!=0) {
                     index = j;
                     break;
                 }
 
-                counter.add(s.charAt(j));
+                arr[in]=1;
                 index = j + 1;
             } 
                 ans = Math.max(ans,index-i);
