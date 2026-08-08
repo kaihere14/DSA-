@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 146-lru-cache/, 3584-find-the-lexicographically-smallest-valid-sequence/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 146-lru-cache/, 460-lfu-cache/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
