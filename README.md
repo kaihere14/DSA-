@@ -46,7 +46,7 @@ Each solution includes:
 ## 📂 Repository Structure
 
 
-├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 3-longest-substring-without-repeating-characters/, 146-lru-cache/)
+├── <problem-id>-<slug>/          # LeetCode problems (e.g., 1-two-sum/, 3236-smallest-missing-integer-greater-than-sequential-prefix-sum/)
 │   ├── README.md                 # Problem description & solution explanation
 │   ├── Notes.md                  # Optional notes & approach details
 │   └── <problem-name>.java       # Java solution file
