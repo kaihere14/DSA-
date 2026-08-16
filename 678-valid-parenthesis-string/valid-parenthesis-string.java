@@ -3,7 +3,6 @@ class Solution {
         Deque<Integer> stack = new ArrayDeque<>();
         Deque<Integer> stack_astrick = new ArrayDeque<>();
 
-        if(s.equals("((*)") || s.equals("(*()"))return true;
         for(int i = 0 ; i < s.length();i++){
             if(s.charAt(i)=='('){
                 stack.push(i);
@@ -22,7 +21,7 @@ class Solution {
             }
         }
         
-        while(stack.size()>0 && stack_astrick.size()>stack.size()){
+        while(stack.size()>0 && stack_astrick.size()>=stack.size()){
             if(stack.peek()<stack_astrick.peek()){
                 stack.pop();
                 stack_astrick.pop();
