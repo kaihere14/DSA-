@@ -13,35 +13,33 @@
  *     }
  * }
  */
-class Tuple{
-    TreeNode node;
-    int level;
-
-    public Tuple(TreeNode node, int level){
-        this.node = node;
-        this.level = level;
-    }
-}
-
 class Solution {
     public int findBottomLeftValue(TreeNode root) {
-        int ans = -1;
-       if(root==null)return ans;
-       ans = root.val;
-       Queue<Tuple> q = new LinkedList<Tuple>();
-       q.offer(new Tuple(root,0));
-       int last_level = 0;
-       while(!q.isEmpty()){
-           Tuple temp = q.poll(); 
-           TreeNode node = temp.node;
-           int level = temp.level;          
-           if(node.left != null)q.offer(new Tuple(node.left,level+1));
-           else if(level>last_level){
-            ans = node.val;
-            last_level = level;
-           }
-           if(node.right != null)q.offer(new Tuple(node.right,level+1));
-       }
-       return ans;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+
+        int ans = root.val;
+
+        while (!q.isEmpty()) {
+            int size = q.size();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode node = q.poll();
+
+                if (i == 0) {
+                    ans = node.val;
+                }
+
+                if (node.left != null) {
+                    q.offer(node.left);
+                }
+
+                if (node.right != null) {
+                    q.offer(node.right);
+                }
+            }
+        }
+
+        return ans;
     }
 }
