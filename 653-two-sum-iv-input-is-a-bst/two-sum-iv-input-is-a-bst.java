@@ -14,25 +14,22 @@
  * }
  */
 class Solution {
-    public ArrayList<Integer> createStore(TreeNode root,ArrayList<Integer> store){
-        if(root==null)return store;
-        store = createStore(root.left,store);
-        store.add(root.val);
-        store = createStore(root.right,store);
-        return store;
-    }
 
     public boolean findTarget(TreeNode root, int k) {
-        ArrayList<Integer> store = new ArrayList<Integer>();
-        store = createStore(root,store);
-        Map<Integer, Integer> prev = new HashMap<>();
-        for (int i = 0; i < store.size(); i++) {
-            int complement = k - store.get(i);
-            if (prev.get(complement) != null) {
-                return true;
-            }
-            prev.put(store.get(i), i);
+        Set<Integer> seen = new HashSet<>();
+        return dfs(root, k, seen);
+    }
+
+    private boolean dfs(TreeNode root, int k, Set<Integer> seen) {
+        if (root == null) return false;
+
+        if (seen.contains(k - root.val)) {
+            return true;
         }
-        return false;
+
+        seen.add(root.val);
+
+        return dfs(root.left, k, seen) ||
+               dfs(root.right, k, seen);
     }
 }
